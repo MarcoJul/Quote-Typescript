@@ -1,0 +1,46 @@
+.headerFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.2rem 0 2.4rem;
+}
+
+.logo {
+  height: 5rem;
+  cursor: pointer;
+}
+
+.menu,
+.account {
+  height: 3.2rem;
+  margin: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 0 16px;
+  }
+
+  .logo {
+    height: 4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 0 80px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  /* body {
+    background-color: green;
+  } */
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1760px;
+    margin: 0 auto;
+  }
+}

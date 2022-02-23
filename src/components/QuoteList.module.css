@@ -1,6 +1,14 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 100%;
-  row-gap: 4rem;
+.myMasonryGrid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -2.5rem; /* gutter size offset */
+}
+.myMasonryGridColumn {
+  padding-left: 3rem; /* gutter size */
+  background-clip: padding-box;
+}
+
+.myMasonryGridColumn > li {
+  margin-bottom: 4rem;
 }

@@ -1,4 +1,5 @@
 import QuoteItem from "./QuoteItem";
+import Masonry from "react-masonry-css";
 
 import classes from "./QuoteList.module.css";
 
@@ -7,9 +8,12 @@ interface QuoteListProps {
 }
 
 const QuoteList: React.FC<QuoteListProps> = (props) => {
-  console.log(props.items);
   return (
-    <ul className={classes.grid}>
+    <Masonry
+      breakpointCols={3}
+      className={classes.myMasonryGrid}
+      columnClassName={classes.myMasonryGridColumn}
+    >
       {props.items.map((item) => {
         return (
           <QuoteItem
@@ -20,7 +24,7 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
           />
         );
       })}
-    </ul>
+    </Masonry>
   );
 };
 

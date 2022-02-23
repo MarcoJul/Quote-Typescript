@@ -1,5 +1,6 @@
 import React from "react";
 
+import classes from "./QuoteItem.module.css";
 interface QuoteItemProps {
   id: string;
   key: string;
@@ -9,9 +10,9 @@ interface QuoteItemProps {
 
 const QuoteItem: React.FC<QuoteItemProps> = (props) => {
   return (
-    <li>
-      <p>{props.text}</p>
-      <p>{props.author}</p>
+    <li className={classes.card}>
+      <p className={classes.text}>{props.text}</p>
+      <p className={classes.author}>{props.author}</p>
     </li>
   );
 };

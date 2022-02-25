@@ -3,11 +3,13 @@ import "./App.module.css";
 import Header from "./ui/Header";
 import { DUMMY_QUOTES } from "./database/database";
 import QuoteList from "./components/QuoteList";
+import Search from "./components/Search";
 
 const App: React.FC = () => {
   return (
     <div>
       <Header />
+      <Search />
       <QuoteList items={DUMMY_QUOTES} />
     </div>
   );

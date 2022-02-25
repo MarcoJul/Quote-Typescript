@@ -1,0 +1,27 @@
+.searchBar {
+  margin: 0 auto;
+  position: relative;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchInput {
+  width: 96%;
+  height: 4.8rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchIcon {
+  height: 3.2rem;
+}

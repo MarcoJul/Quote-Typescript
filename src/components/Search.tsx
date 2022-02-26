@@ -1,9 +1,14 @@
 import classes from "./Search.module.css";
+import { ReactComponent as SearchIcon } from "../assets/icons/ICN_Search.svg";
+import { useContext } from "react";
+import SearchContext from "../store/seach-context";
 
 const Search: React.FC = () => {
+  const searchCtx = useContext(SearchContext);
   const searchHandler = (event: any) => {
-    console.log(event.target.value);
+    searchCtx.setSearch(event.target.value);
   };
+
   return (
     <div className={classes.searchBar}>
       <input
@@ -12,6 +17,7 @@ const Search: React.FC = () => {
         placeholder={"Search through your quote"}
         onChange={searchHandler}
       ></input>
+      <SearchIcon />
     </div>
   );
 };

@@ -50,4 +50,32 @@ export const DUMMY_QUOTES = [
     text: "Peace comes from within. Do not seek it without.",
     author: "Buddha",
   },
+  {
+    id: "a12",
+    text: "Think how hard physics would be if particles could think.",
+    author: "Murray Gell-Mann",
+  },
+  {
+    id: "a13",
+    text: "Love is the flower you've got to let grow.",
+    author: "John Lennon",
+  },
+  {
+    id: "a14",
+    text: "Don't wait. The time will never be just right.",
+    author: "Napoleon Hill",
+  },
+  {
+    id: "a15",
+    text: "Time is the wisest counsellor of all.",
+    author: "Pericles",
+  },
+  { id: "a16", text: "You give before you get.", author: "Napoleon Hill" },
+  { id: "a17", text: "Wisdom begins in wonder.", author: "Socrates" },
+  {
+    id: "a18",
+    text: "Without courage, wisdom bears no fruit.",
+    author: "Baltasar Gracian",
+  },
+  { id: "a19", text: "Change in all things is sweet.", author: "Aristotle" },
 ];

@@ -2,7 +2,7 @@ import QuoteItem from "./QuoteItem";
 import Masonry from "react-masonry-css";
 
 import classes from "./QuoteList.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SearchContext from "../store/seach-context";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -35,16 +35,21 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
     filteredQuotes = filterSearch(trimArr);
   } else filteredQuotes = props.items;
 
-  console.log(filteredQuotes.length);
+  useEffect(() => {
+    if (filteredQuotes.length < 6) {
+      setContainerHeight("80rem");
+      return;
+    }
+    if (filteredQuotes.length <= 11) {
+      setContainerHeight("100rem");
+      return;
+    }
+    if (filteredQuotes.length > 15) {
+      setContainerHeight(`${filteredQuotes.length - 6}0rem`);
+    }
+  }, [filteredQuotes.length]);
 
-  // if (filteredQuotes.length) {
-  // }
-  // setContainerHeight("80rem");
-
-  const masonryClass = {
-    width: "10rem",
-    height: containerHeight,
-  };
+  console.log(containerHeight);
 
   return (
     // <Masonry
@@ -52,14 +57,10 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
     //   columnClassName={classes.myMasonryGridColumn}
     //   breakpointCols={3}
     // >
-    <motion.ul
+    <ul
       className={classes.container}
       style={{
-        height: `${
-          filteredQuotes.length < 5
-            ? filteredQuotes.length
-            : filteredQuotes.length - 4
-        }0rem`,
+        height: containerHeight,
         width: "10rem",
       }}
     >
@@ -75,7 +76,7 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
           );
         })}
       </AnimatePresence>
-    </motion.ul>
+    </ul>
     // </Masonry>
   );
 };

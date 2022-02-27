@@ -26,9 +26,16 @@
   column-count: 4;
   column-gap: 10px;
 } */
+
 .container {
+  width: 120rem;
+  margin: 0;
+}
+.Quotecontainer {
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  width: fit-content;
+  margin-left: -4rem;
 }

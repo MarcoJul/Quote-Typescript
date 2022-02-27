@@ -1,9 +1,10 @@
 .card {
   background-color: #fff;
   border-radius: 1rem;
-  margin: 0 2rem;
+  margin: 0 2rem 3rem;
   list-style-type: none;
   padding: 2rem;
+  width: 40rem;
 }
 
 .text {

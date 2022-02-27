@@ -16,7 +16,7 @@ const SuggestedQuote: React.FC = () => {
     fetchQuote();
   }, []);
 
-  return <div>{}</div>;
+  return <div>Suggested</div>;
 };
 
 export default SuggestedQuote;

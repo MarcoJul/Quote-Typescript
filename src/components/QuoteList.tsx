@@ -2,14 +2,16 @@ import QuoteItem from "./QuoteItem";
 import Masonry from "react-masonry-css";
 
 import classes from "./QuoteList.module.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import SearchContext from "../store/seach-context";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface QuoteListProps {
   items: { id: string; text: string; author: string }[];
 }
 
 const QuoteList: React.FC<QuoteListProps> = (props) => {
+  const [containerHeight, setContainerHeight] = useState("50rem");
   const { searchInput } = useContext(SearchContext);
 
   const arrInputs = searchInput.includes(" ")
@@ -33,25 +35,48 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
     filteredQuotes = filterSearch(trimArr);
   } else filteredQuotes = props.items;
 
-  console.log(filteredQuotes);
+  console.log(filteredQuotes.length);
+
+  // if (filteredQuotes.length) {
+  // }
+  // setContainerHeight("80rem");
+
+  const masonryClass = {
+    width: "10rem",
+    height: containerHeight,
+  };
 
   return (
-    <Masonry
-      breakpointCols={3}
-      className={classes.myMasonryGrid}
-      columnClassName={classes.myMasonryGridColumn}
+    // <Masonry
+    //   className={classes.myMasonryGrid}
+    //   columnClassName={classes.myMasonryGridColumn}
+    //   breakpointCols={3}
+    // >
+    <motion.ul
+      className={classes.container}
+      style={{
+        height: `${
+          filteredQuotes.length < 5
+            ? filteredQuotes.length
+            : filteredQuotes.length - 4
+        }0rem`,
+        width: "10rem",
+      }}
     >
-      {filteredQuotes.map((item) => {
-        return (
-          <QuoteItem
-            id={item.id}
-            key={item.id}
-            text={item.text}
-            author={item.author}
-          />
-        );
-      })}
-    </Masonry>
+      <AnimatePresence>
+        {filteredQuotes.map((item) => {
+          return (
+            <QuoteItem
+              key={item.id}
+              id={item.id}
+              text={item.text}
+              author={item.author}
+            />
+          );
+        })}
+      </AnimatePresence>
+    </motion.ul>
+    // </Masonry>
   );
 };
 

@@ -1,9 +1,10 @@
 .myMasonryGrid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  margin-left: -2.5rem; /* gutter size offset */
+  margin-left: -2.5rem;
 }
+
 .myMasonryGridColumn {
   padding-left: 3rem; /* gutter size */
   background-clip: padding-box;
@@ -11,4 +12,22 @@
 
 .myMasonryGridColumn > li {
   margin-bottom: 4rem;
+}
+/* .masonry {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column wrap;
+  width: 100%;
+  height: auto;
+} */
+/* .container {
+  column-count: 4;
+  column-gap: 10px;
+} */
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }

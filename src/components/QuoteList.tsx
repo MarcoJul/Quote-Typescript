@@ -1,17 +1,16 @@
 import QuoteItem from "./QuoteItem";
-import Masonry from "react-masonry-css";
 
 import classes from "./QuoteList.module.css";
 import { useContext, useEffect, useState } from "react";
 import SearchContext from "../store/seach-context";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 interface QuoteListProps {
   items: { id: string; text: string; author: string }[];
 }
 
 const QuoteList: React.FC<QuoteListProps> = (props) => {
-  const [containerHeight, setContainerHeight] = useState("150rem");
+  const [containerHeight, setContainerHeight] = useState("130rem");
   const { searchInput } = useContext(SearchContext);
   const [searchedQuote, setSearchedQuote] = useState(props.items);
 
@@ -38,7 +37,6 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
 
   useEffect(() => {
     const containerDim = setTimeout(() => {
-      console.log("aggiornando...");
       if (filteredQuotes.length < 4) {
         setSearchedQuote(filteredQuotes);
         setTimeout(() => {
@@ -69,12 +67,9 @@ const QuoteList: React.FC<QuoteListProps> = (props) => {
     }, 750);
 
     return () => {
-      console.log("cleanup");
       clearTimeout(containerDim);
     };
   }, [searchInput]);
-
-  console.log(containerHeight);
 
   return (
     // <Masonry

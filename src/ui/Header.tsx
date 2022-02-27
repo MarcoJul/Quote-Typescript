@@ -6,13 +6,11 @@ import classes from "./Header.module.css";
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <div className={classes.container}>
-        <div className={classes.headerFlex}>
-          <MenuIcon />
-          <LogoIcon />
-          <AccountIcon />
-        </div>
+    <header className={classes.header}>
+      <div className={classes.headerFlex}>
+        <MenuIcon />
+        <LogoIcon />
+        <AccountIcon />
       </div>
     </header>
   );

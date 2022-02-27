@@ -1,0 +1,31 @@
+.suggestedQuote {
+  margin: 3rem 0 1rem;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.quoteMarks {
+  position: absolute;
+  height: 7.3rem;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+.suggestedFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textQuote {
+  font-family: "Source Serif Pro", serif;
+  color: #3e3e3e;
+  font-size: 3.2rem;
+  font-style: italic;
+  margin: 6.3rem 0 0.8rem 0;
+}
+
+.authorQuote {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 2.4rem 0;
+}
